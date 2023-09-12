@@ -33,6 +33,7 @@
   },
   "dependencies": {
     "@morpheme/nuxt": "^1.0.0-beta.11",
+    "@nuxt/image": "^1.0.0-rc.1",
     "@pinia/nuxt": "^0.4.11",
     "axios": "^1.5.0",
     "pinia": "^2.1.6"
