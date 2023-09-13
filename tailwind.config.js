@@ -1,10 +1,9 @@
 // tailwind.config.js
 const { colors } = require('tailwindcss/defaultTheme')
 
-console.log('colors.gray', colors.gray)
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  important: true,
   content: [
     './components/**/*.{js,vue,ts}',
     './layouts/**/*.vue',
@@ -23,6 +22,9 @@ module.exports = {
         20: '20px'
       },
       colors: {
+        custom: {
+          'light-blue': 'var(--color-blue-light)'
+        },
         gray: {
           200: 'var(--color-gray-200)',
           300: 'var(--color-gray-300)',
@@ -32,6 +34,7 @@ module.exports = {
           900: 'var(--color-gray-900)'
         },
         blue: {
+          100: 'var(--color-blue-100)',
           700: 'var(--color-blue-700)'
         },
         primary: {
