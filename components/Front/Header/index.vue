@@ -1,20 +1,36 @@
 <script lang="ts" setup>
+// Types
+import { TFrontHeaderProps } from './index.type'
+
+// Define props
+const props = defineProps<TFrontHeaderProps>()
+
 const GITS_LOGO = 'gits-logo'
 </script>
 
 <template>
-  <nav>
+  <nav
+    class="w-full"
+    :class="{
+      'bg-white': props.layout === 'auth',
+      'bg-[#d8edfc]': props.layout === 'default',
+      border: props.layout === 'auth',
+      'border-b-gray-200': props.layout === 'auth'
+    }"
+  >
     <div
       class="front-wrapper flex flex-col items-center md:flex-row justify-between h-full"
     >
       <!-- Logo -->
-      <div class="logos">
-        <NuxtImg :src="`/${GITS_LOGO}.png`" />
-        <img
-          src="@/assets/images/gits-logo-name.png"
-          alt="GITS Name E-Commerce"
-        />
-      </div>
+      <NuxtLink to="/">
+        <div class="logos cursor-pointer">
+          <NuxtImg :src="`/${GITS_LOGO}.png`" />
+          <img
+            src="@/assets/images/gits-logo-name.png"
+            alt="GITS Name E-Commerce"
+          />
+        </div>
+      </NuxtLink>
       <!-- End Logo -->
 
       <!-- Menu -->
@@ -22,7 +38,23 @@ const GITS_LOGO = 'gits-logo'
 
       <!-- Buttons or Menu  -->
       <div>
-        <p class="need-help text-blue-700">Need Help?</p>
+        <div v-if="props.layout === 'default'" class="flex items-center gap-3">
+          <NuxtLink
+            to="/auth/login"
+            class="btn btn-default btn--md btn--text cursor-pointer"
+          >
+            Log in
+          </NuxtLink>
+          <NuxtLink
+            to="/auth/signup"
+            class="btn btn-primary btn--md cursor-pointer"
+          >
+            Sign up
+          </NuxtLink>
+        </div>
+        <div v-if="props.layout === 'auth'">
+          <p class="need-help text-blue-700">Need Help?</p>
+        </div>
       </div>
       <!-- End Buttons or Menu  -->
     </div>
@@ -31,10 +63,7 @@ const GITS_LOGO = 'gits-logo'
 
 <style lang="scss" scoped>
 nav {
-  background-color: rgba(255, 255, 255, 1);
   height: 80px;
-  width: 100%;
-  border-bottom: 1px solid var(--color-gray-200);
 }
 
 img {

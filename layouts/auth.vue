@@ -6,8 +6,11 @@ useHead({
 </script>
 
 <template>
-  <FrontHeader />
-  <div class="wrapper">
+  <!-- Header -->
+  <FrontHeader layout="auth" />
+  <!-- End Header -->
+
+  <div class="auth-wrapper">
     <div class="grid grid-cols-2">
       <!-- Image For Flash Sale -->
       <div class="flash-sale flex flex-row items-center justify-center">
@@ -26,12 +29,18 @@ useHead({
       <!-- End Content -->
     </div>
   </div>
+
+  <!-- Front News Letter -->
   <FrontFooterNewsLetter />
+  <!-- End Front News Letter -->
+
+  <!-- Front Footer -->
   <FrontFooter />
+  <!-- End Front Footer -->
 </template>
 
 <styled lang="scss" scoped>
-.wrapper {
+.auth-wrapper {
   min-height: 85vh;
   background: url('@/assets/images/flash-sale-bg.png') no-repeat center
     center/cover;
