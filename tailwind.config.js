@@ -39,6 +39,9 @@ module.exports = {
         },
         primary: {
           700: 'var(--color-primary-700)'
+        },
+        black: {
+          400: 'var(--color-black-400)'
         }
       }
     }

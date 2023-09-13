@@ -16,10 +16,17 @@
   --color-blue-100: rgba(255, 255, 255, 1), rgba(208, 213, 221, 1);
   --color-blue-700: #0764a7;
   --color-primary-700: #0764a7;
+  --color-black-400: #212529;
 }
 
 @layer utilities {
   .front-wrapper {
     @apply mx-auto max-w-screen-xl;
+  }
+
+  .front-header {
+    @apply text-gray-900 font-semibold;
+    line-height: 32px;
+    font-size: 24px;
   }
 }

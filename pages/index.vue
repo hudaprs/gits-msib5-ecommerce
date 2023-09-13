@@ -12,5 +12,6 @@ useHead({
 <template>
   <div>
     <FrontHome />
+    <FrontHomeCategories />
   </div>
 </template>
